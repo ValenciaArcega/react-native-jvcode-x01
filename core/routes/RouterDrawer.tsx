@@ -3,7 +3,7 @@ import { View } from "react-native";
 
 export const RouterDrawer = createDrawerNavigator({
 	screens: {
-		Test: () => <View />,
-		Test2: () => <View />,
+		Test: () => <View className="flex-1 bg-p500" />,
+		Test2: () => <View className="flex-1 bg-indigo-100" />,
 	}
 });
