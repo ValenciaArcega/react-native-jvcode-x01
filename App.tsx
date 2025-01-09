@@ -1,10 +1,16 @@
+import "./global.css";
 import { StatusBar } from 'expo-status-bar';
-import { NavigationContainer } from "@react-navigation/native";
-import { Router } from "./core/routes/Router";
+import { UserContext } from "./core/context/UserContext";
+import { useAppearance } from "./core/hooks/useAppearance";
+import { RootRouter } from "./core/routes/RootRouter";
 
 export default function App() {
-  return <Router />;
-  {/* <StatusBar
+  const { isDarkMode } = useAppearance();
+
+  return <UserContext>
+    <StatusBar
       style={!isDarkMode ? "dark" : "light"}
-      backgroundColor="transparent" /> */}
+      backgroundColor="transparent" />
+    <RootRouter />
+  </UserContext>;
 }
