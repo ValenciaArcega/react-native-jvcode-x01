@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "react-native-jvcode-x01",
-    "slug": "react-native-jvcode-x01",
+    "name": "x01",
+    "slug": "x01",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "splash": {
       "image": "./assets/splash-icon.png",
@@ -13,15 +13,15 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.baaccsystems.reactnativejvcodex01"
+      "bundleIdentifier": "com.jvcode.x01",
+      "supportsTablet": false
     },
     "android": {
+      "package": "com.jvcode.x01",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      },
-      "package": "com.baaccsystems.reactnativejvcodex01"
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"

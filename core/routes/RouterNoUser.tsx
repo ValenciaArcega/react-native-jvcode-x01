@@ -1,10 +1,15 @@
 import { createStaticNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { View } from "react-native";
+import { Welcome } from "../views/public/Welcome";
 
 const RouterStack = createNativeStackNavigator({
 	screens: {
-		Welcome: () => <View />
+		Welcome: {
+			screen: Welcome,
+			options: {
+				headerShown: false,
+			}
+		},
 	},
 	id: undefined,
 });
