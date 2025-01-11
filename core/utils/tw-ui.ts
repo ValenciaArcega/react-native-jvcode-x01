@@ -29,7 +29,7 @@ export const inp = "h-12 w-full mt-2 px-4 text-[18px] rounded-xl bg-white dark:b
 export const inpToken = "h-[92] w-[74px] bg-[#f2f2f7] text-black dark:bg-[#212529] dark:text-white rounded-3xl text-[38px] text-center";
 // buttons
 export const btnTogglePass = "w-[18%] h-[60px] mt-1 items-center justify-center";
-export const btnBase = "min-h-[50px] max-h-[50px] w-full mt-6 rounded-2xl overflow-hidden items-center justify-center bg-black dark:bg-white flex-row";
+export const btnBase = "min-h-[50px] max-h-[50px] w-full mt-6 rounded-3xl overflow-hidden items-center justify-center bg-black dark:bg-white flex-row";
 export const btnSecondary = 'bg-gray-100 border-[1px] border-gray-300 dark:border-gray-500 dark:bg-gray900 rounded-2xl items-center justify-center min-h-[50px] max-h-[50px] mt-6 w-full flex-row';
 export const btnDestructive = "h-11 w-[70%] mt-8 px-5 self-center rounded-2xl justify-center bg-gray-50 dark:bg-gray900 border-[1px] border-gray-200 dark:border-gray-600";
 export const btnIconTxtIcon = "min-w-[60%] mt-6 h-[56px] bg-[#f2f2f7] dark:bg-[#212529] rounded-xl pl-4 flex-row items-center";
