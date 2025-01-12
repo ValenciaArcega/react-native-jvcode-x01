@@ -41,8 +41,6 @@ export const SkeletonItem = ({ twClass }: { twClass: string; }) => {
 			style={[
 				{
 					backgroundColor: isDarkMode ? "#343a40" : '#E1E9EE',
-					borderRadius: 8,
-					alignSelf: "center",
 				},
 				animatedStyle,
 			]}

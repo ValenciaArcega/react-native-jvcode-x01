@@ -1,12 +1,12 @@
 import { useUser } from "../hooks/useUser";
-import { Router } from "./Router";
+import { RouterUser } from "./RouterUser";
 import { RouterNoUser } from "./RouterNoUser";
 
 export const RootRouter = function () {
 	const { user } = useUser();
 
 	if (user)
-		return <Router />;
+		return <RouterUser />;
 	else
 		return <RouterNoUser />;
 };

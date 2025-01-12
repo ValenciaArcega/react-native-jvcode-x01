@@ -34,9 +34,4 @@ export const gs = StyleSheet.create({
 		position: "absolute",
 		right: 16,
 	},
-	iconHeader: {
-		marginTop: 48,
-		marginBottom: 6,
-		marginLeft: 8,
-	}
 });

@@ -1,17 +1,17 @@
 import { createStaticNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Welcome } from "../views/public/Welcome";
+import { Login } from "../views/public/Login";
 
-const RouterStack = createNativeStackNavigator({
+const RouterStackNoUser = createNativeStackNavigator({
+	screenOptions: {
+		headerShown: false
+	},
 	screens: {
-		Welcome: {
-			screen: Welcome,
-			options: {
-				headerShown: false,
-			}
-		},
+		Welcome: Welcome,
+		Login: Login,
 	},
 	id: undefined,
 });
 
-export const RouterNoUser = createStaticNavigation(RouterStack);
+export const RouterNoUser = createStaticNavigation(RouterStackNoUser);
