@@ -16,16 +16,14 @@ export const txt = "text-black dark:text-white";
 export const wrSwitch = "py-2.5 w-full rounded-xl px-4 mt-8 items-center bg-gray-100 dark:bg-gray900 flex-row justify-between";
 export const txtHelperInp = 'text-xs text-gray-400 ml-4 mt-1';
 
-export const wrInpIcon = "flex-row items-center mt-2";
 export const wrPass = "flex-row items-center justify-between";
 
+export const wrInpIcon = "flex-row items-center mt-2";
+export const inpIcon = "h-14 w-full pr-3 pl-12 text-[18px] rounded-2xl bg-white dark:bg-[#0A0A0A] border-[1px] border-[#ddd] dark:border-gray-700 focus:border-p300 focus:bg-p100 flex dark:focus:bg-gray-900 dark:text-p100";
+export const svgInp = "absolute left-5";
+
 export const labelInp = "mt-5 text-[14px] text-black dark:text-gray-100 font-medium";
-export const inpIcon = "h-14 w-full pr-3 pl-12 text-[18px] rounded-2xl bg-white dark:bg-[#0A0A0A] border-[2px] border-[#ddd] dark:border-gray-700 focus:border-p300 focus:bg-p100 flex dark:focus:bg-gray-900 dark:text-p100";
-export const svgInp: TextStyle = {
-	position: "absolute",
-	left: 16,
-};
-export const inp = "h-12 w-full mt-2 px-4 text-[18px] rounded-xl bg-white dark:bg-[#0A0A0A] border-[1.5px] border-[#ddd] dark:border-gray-700 focus:border-p300 focus:bg-p100 flex dark:focus:bg-gray-900 dark:text-p100 opacity-100";
+export const inp = "h-12 w-full mt-2 px-4 text-[18px] rounded-2xl bg-white dark:bg-[#0A0A0A] border-[1.5px] border-[#ddd] dark:border-gray-700 focus:border-p300 focus:bg-p100 flex dark:focus:bg-gray-900 dark:text-p100 opacity-100";
 export const inpToken = "h-[92] w-[74px] bg-[#f2f2f7] text-black dark:bg-[#212529] dark:text-white rounded-3xl text-[38px] text-center";
 // buttons
 export const btnTogglePass = "w-[18%] h-[60px] mt-1 items-center justify-center";
@@ -38,5 +36,5 @@ export const btnFloating = "h-16 w-16 rounded-full z-2 absolute bottom-4 right-4
 export const txtBtnBase = "text-white dark:text-black text-base ml-2 font-normal";
 export const txtBtnSecondary = "text-black dark:text-white text-base ml-2 font-normal";
 export const txtBtnIconTxtIcon = "text-[17px] ml-4 dark:text-white";
-export const txtTitle = "text-black dark:text-white text-xl font-semibold tracking-tight";
+export const txtTitle = "text-black dark:text-white text-4xl font-semibold tracking-tight";
 export const txtDestructive = "text-red-500 dark:text-red-400 text-base";
