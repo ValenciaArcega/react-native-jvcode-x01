@@ -4,6 +4,7 @@ import { REG_EMAIL } from "@/core/constants/regex";
 import { useAppearance } from "@/core/hooks/useAppearance";
 import { LoginProps } from "@/core/types/routes";
 import { btnBase, btnTogglePass, inpIcon, labelInp, svgInp, txtBtnBase, txtTitle, wrInpIcon, wrPass, wrView } from "@/core/utils/tw-ui";
+import { ENDPOINT_LOGIN } from "@env";
 import { MaterialIcons, Octicons } from "@expo/vector-icons";
 import { useState } from "react";
 import { Alert, Text, TextInput, TouchableOpacity, View } from "react-native";
@@ -16,7 +17,6 @@ export const Login = function ({ route }: LoginProps) {
 	const [pass, setPass] = useState<string>("");
 	const [isPassVisible, setIsPassVisible] = useState<boolean>(false);
 	const [isValidating, setIsValidating] = useState<boolean>(false);
-
 	const login_onPress = async function (): Promise<void> {
 		try {
 			if (!email || !email.trim()) {
@@ -32,6 +32,25 @@ export const Login = function ({ route }: LoginProps) {
 				return;
 			}
 			setIsValidating(true);
+
+			const options = {
+				method: "POST",
+				headers: {
+					'Content-Type': 'application/json',
+					"DEX-KEY-ENV": props.guid,
+					"DEX-CHANNEL": "AppMovil"
+				},
+				body: JSON.stringify({
+					Login: [{
+						user: email,
+						password: pass
+					}]
+				})
+			};
+			const request = await fetch(`${ENDPOINT_LOGIN}`, options);
+			const json = await request.json();
+
+			console.log(json);
 
 		} finally {
 			setIsValidating(false);
