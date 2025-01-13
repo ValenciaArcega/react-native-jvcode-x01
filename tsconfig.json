@@ -3,8 +3,8 @@
   "compilerOptions": {
     "strict": true,
     "baseUrl": ".",
-    "typeRoots": [
-      "./env.d.ts"
+    "types": [
+      "react-native-dotenv"
     ],
     "paths": {
       "@/*": [

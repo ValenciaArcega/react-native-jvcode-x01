@@ -11,7 +11,6 @@ import { Alert, Text, TextInput, TouchableOpacity, View } from "react-native";
 export const Login = function ({ route }: LoginProps) {
 	const props = route.params;
 	const { colorAssetInverted, colorAsset, colorPlaceHolder } = useAppearance();
-	console.log(process.env.ENDPOINT_TEAMS);
 
 	const [email, setEmail] = useState<string>("");
 	const [pass, setPass] = useState<string>("");

@@ -8,6 +8,7 @@ import { IApiResponse, ITeam } from "@/core/interfaces/IWelcome";
 import { ERR_TITLE, MSG } from "@/core/constants/labels";
 import { SkeletonItem } from "@/core/components/Loaders";
 import { useFlow } from "@/core/hooks/useFlow";
+import { ENDPOINT_TEAMS } from '@env';
 
 export const Welcome = function () {
 	const { colorAssetInverted, colorAsset } = useAppearance();
@@ -22,7 +23,7 @@ export const Welcome = function () {
 
 	const getTeams = async function (): Promise<void> {
 		try {
-			const res = await fetch("https://kube.vde-suite.com/mx/dexmi/v1/sports/company/get", {
+			const res = await fetch(ENDPOINT_TEAMS, {
 				method: "GET",
 				headers: { 'DEX-KEY': 'DexRules' }
 			});
