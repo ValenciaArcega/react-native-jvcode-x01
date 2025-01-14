@@ -1,13 +1,13 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createStaticNavigation } from "@react-navigation/native";
-import { RouterDrawer } from "./RouterDrawer";
+import { DrawerUser } from "./DrawerUser";
 
 const RouterStackUser = createNativeStackNavigator({
 	screenOptions: {
 		headerShown: false,
 	},
 	screens: {
-		Drawer: RouterDrawer,
+		Drawer: DrawerUser,
 	},
 	id: undefined,
 });

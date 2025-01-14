@@ -1,12 +1,13 @@
 export interface IUser {
-	CELULAR: string;
-	CORREO: string;
-	FOTO_PERFIL: string;
-	F_NACIMIENTO: string;
-	ID_USUARIO: number;
-	NOMBRE: string;
-	PRIMER_AP: string;
-	SEGUNDO_AP: string;
+	// CELULAR: string;
+	// CORREO: string;
+	// FOTO_PERFIL: string;
+	// F_NACIMIENTO: string;
+	// ID_USUARIO: number;
+	// NOMBRE: string;
+	// PRIMER_AP: string;
+	// SEGUNDO_AP: string;
+	GUID: string;
 }
 
 export interface IUserContext {

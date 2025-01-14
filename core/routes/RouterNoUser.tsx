@@ -4,7 +4,7 @@ import { Welcome } from "../views/public/Welcome";
 import { Login } from "../views/public/Login";
 
 const RouterStackNoUser = createNativeStackNavigator({
-	initialRouteName: "Login",
+	initialRouteName: "Welcome",
 	screenOptions: {
 		headerShown: false
 	},

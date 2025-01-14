@@ -1,24 +1,30 @@
 import { AvoiderKeyboard } from "@/core/components/AvoiderKeyboard";
-import { ERR_TITLE } from "@/core/constants/labels";
+import { ERR_TITLE, MSG } from "@/core/constants/labels";
 import { REG_EMAIL } from "@/core/constants/regex";
 import { useAppearance } from "@/core/hooks/useAppearance";
+import { useUser } from "@/core/hooks/useUser";
+import { IApiResponse } from "@/core/interfaces/IWelcome";
 import { LoginProps } from "@/core/types/routes";
 import { btnBase, btnTogglePass, inpIcon, labelInp, svgInp, txtBtnBase, txtTitle, wrInpIcon, wrPass, wrView } from "@/core/utils/tw-ui";
-import { ENDPOINT_LOGIN } from "@env";
-import { MaterialIcons, Octicons } from "@expo/vector-icons";
-import { useState } from "react";
-import { Alert, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { ENDPOINT_LOGIN, LOGIN_PASS, LOGIN_USER } from "@env";
+import { Ionicons, Octicons } from "@expo/vector-icons";
+import { Fragment, useState } from "react";
+import { ActivityIndicator, Alert, Text, TextInput, TouchableOpacity, View } from "react-native";
 
 export const Login = function ({ route }: LoginProps) {
 	const props = route.params;
 	const { colorAssetInverted, colorAsset, colorPlaceHolder } = useAppearance();
+	const { setUser } = useUser();
 
-	const [email, setEmail] = useState<string>("");
-	const [pass, setPass] = useState<string>("");
+	const [email, setEmail] = useState<string>(LOGIN_USER);
+	const [pass, setPass] = useState<string>(LOGIN_PASS);
 	const [isPassVisible, setIsPassVisible] = useState<boolean>(false);
 	const [isValidating, setIsValidating] = useState<boolean>(false);
+
 	const login_onPress = async function (): Promise<void> {
 		try {
+			console.log(ENDPOINT_LOGIN);
+
 			if (!email || !email.trim()) {
 				Alert.alert(ERR_TITLE, "Asegúrate de ingresar tu correo electrónico para poder continuar.");
 				return;
@@ -50,8 +56,12 @@ export const Login = function ({ route }: LoginProps) {
 			const request = await fetch(`${ENDPOINT_LOGIN}`, options);
 			const json = await request.json();
 
-			console.log(json);
-
+			if (json.success) {
+				setUser(json.listElementsDex[0].guid);
+			}
+			else if (json.message) Alert.alert(ERR_TITLE, json.message);
+		} catch {
+			Alert.alert(ERR_TITLE, MSG.NO_SERVER);
 		} finally {
 			setIsValidating(false);
 		}
@@ -82,7 +92,7 @@ export const Login = function ({ route }: LoginProps) {
 				Ingresa tus credenciales en WIP para poder realizar movimientos y ver el contenido.
 			</Text>
 
-			<Text className={labelInp + " mt-11"}>
+			<Text className={labelInp + " mt-14"}>
 				Usuario
 			</Text>
 			<View className={wrInpIcon}>
@@ -101,7 +111,10 @@ export const Login = function ({ route }: LoginProps) {
 					className={svgInp}
 					color={colorAsset} />
 			</View>
-			<View className={wrPass + " mt-3"}>
+			<Text className={labelInp + " mt-4"}>
+				Contraseña
+			</Text>
+			<View className={wrPass}>
 				<View className={wrInpIcon + " w-[82%]"}>
 					<TextInput
 						value={pass}
@@ -130,11 +143,15 @@ export const Login = function ({ route }: LoginProps) {
 			<TouchableOpacity
 				disabled={isValidating}
 				onPress={login_onPress}
-				className={btnBase}>
-				<MaterialIcons name="verified" size={20} color={colorAssetInverted} />
-				<Text className={txtBtnBase}>
-					Entrar
-				</Text>
+				className={btnBase + " mt-12 self-center w-[66%]"}>
+				{isValidating
+					? <ActivityIndicator size="small" color={colorAssetInverted} />
+					: <Fragment>
+						<Ionicons name="log-in-outline" size={22} color={colorAssetInverted} />
+						<Text className={txtBtnBase}>
+							Entrar
+						</Text>
+					</Fragment>}
 			</TouchableOpacity>
 		</AvoiderKeyboard>
 	</View>;
