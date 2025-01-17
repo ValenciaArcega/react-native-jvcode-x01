@@ -21,6 +21,9 @@
       ],
       "@utils/*": [
         "core/utils/*"
+      ],
+      "@views/*": [
+        "core/views/*"
       ]
     }
   }

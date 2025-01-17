@@ -4,7 +4,7 @@ export const navigatorDrawer = (isDarkMode: boolean) => ({
 	drawerInactiveTintColor: isDarkMode ? "#c5c5c5" : "#343536",
 	drawerItemStyle: {
 		marginTop: 18,
-		borderRadius: 18,
+		borderRadius: 14,
 		paddingLeft: 6,
 	},
 	drawerLabelStyle: {
