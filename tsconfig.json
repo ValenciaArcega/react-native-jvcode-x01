@@ -13,6 +13,9 @@
       "@components/*": [
         "core/components/*"
       ],
+      "@constants/*": [
+        "core/constants/*"
+      ],
       "@hooks/*": [
         "core/hooks/*"
       ],

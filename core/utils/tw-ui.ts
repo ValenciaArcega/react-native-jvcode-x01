@@ -12,7 +12,8 @@ export const wrView = "flex-1 bg-[#fff] dark:bg-[#0A0A0A]";
 export const wrMultimedia = "max-w-full min-h-[56px] py-3 bg-[#f2f2f7] dark:bg-[#212529] mt-2 px-4 rounded-xl flex-row items-center";
 export const txtMultimedia = "ml-2 font-medium text-p800 dark:text-p100 text-base";
 export const separator = "border-b-[1px] border-b-[#eee] dark:border-b-[#444] w-full h-1 my-4";
-export const txt = "text-black dark:text-white";
+export const wrEmpty = "flex-grow min-h-[90%] items-center justify-center px-8";
+export const txtEmpty = "mt-3 text-base text-gray-400 text-center";
 export const wrSwitch = "py-2.5 w-full rounded-xl px-4 mt-8 items-center bg-gray-100 dark:bg-gray900 flex-row justify-between";
 export const txtHelperInp = 'text-xs text-gray-400 ml-4 mt-1';
 
@@ -38,3 +39,5 @@ export const txtBtnSecondary = "text-black dark:text-white text-base ml-2 font-n
 export const txtBtnIconTxtIcon = "text-[17px] ml-4 dark:text-white";
 export const txtTitle = "text-black dark:text-white text-4xl font-semibold tracking-tight";
 export const txtDestructive = "text-red-500 dark:text-red-400 text-base";
+// lists
+export const wrImgViewTxt = "h-44 w-full mt-5 py-4 px-3 rounded-3xl bg-gray-50 border-[1px] border-gray-200 dark:bg-gray900 dark:border-gray-600 flex-row";

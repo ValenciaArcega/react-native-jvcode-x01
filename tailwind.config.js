@@ -25,8 +25,9 @@ module.exports = {
         s600: "#7bab27",
         s700: "#6e9822",
 
-        darkFrGreen: "#D9FDD3",
-        darkBgGreen: "#103529"
+        green100: "#D9FDD3",
+        green900: "#103529",
+        green500: "#22c55e",
       },
     },
   },

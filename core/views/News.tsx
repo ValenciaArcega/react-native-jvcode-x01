@@ -1,5 +1,5 @@
 import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { wrView } from "@utils/tw-ui";
+import { txtEmpty, wrEmpty, wrImgViewTxt, wrView } from "@utils/tw-ui";
 import { Octicons } from "@expo/vector-icons";
 import { useAppearance } from "@hooks/useAppearance";
 import { gs } from "../constants/styles";
@@ -25,21 +25,21 @@ export const News = function () {
 			data={[{}]}
 			contentInsetAdjustmentBehavior="automatic"
 			style={[gs.scroll, s.scrollAdjustment]}
-			ListEmptyComponent={<View className="flex-grow min-h-[90%] items-center justify-center px-8">
+			ListEmptyComponent={<View className={wrEmpty}>
 				<Octicons name="bookmark-slash" size={36} color={colorAsset} />
-				<Text className="mt-3 text-base text-gray-400 text-center">
+				<Text className={txtEmpty}>
 					¡Estas al día! No hay noticias recientes.
 				</Text>
 			</View>}
 			renderItem={({ item }) => <TouchableOpacity
 				onPress={() => flow.navigate("Notifications")}
-				className="h-44 w-full mt-5 py-4 px-3 rounded-3xl bg-gray-50 border-[1px] border-gray-200 dark:bg-gray900 dark:border-gray-600 flex-row"
+				className={wrImgViewTxt}
 			>
 				<Image
 					className="w-[42%] h-full rounded-xl"
 					source={{ uri: "https://images.unsplash.com/photo-1624880357913-a8539238245b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" }}
 				/>
-				<View className="w[50%] pl-3 flex-shrink">
+				<View className="w-[58%] pl-3 flex-shrink">
 					<Text
 						className="text-lg leading-6 font-semibold text-black dark:text-white"
 						numberOfLines={2}>
