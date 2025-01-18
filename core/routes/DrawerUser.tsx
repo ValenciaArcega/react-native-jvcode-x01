@@ -4,6 +4,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { navigatorDrawer } from "@utils/router-config";
 import { useAppearance } from "../hooks/useAppearance";
 import { News } from "@views/News";
+import { View } from "react-native";
 
 const Drawer = createDrawerNavigator();
 
@@ -22,8 +23,18 @@ export const DrawerUser = function () {
 			options={{
 				title: "Noticias",
 				drawerIcon: ({ color, focused }) => <Ionicons
-					name={focused ? "earth" : "earth-outline"}
-					size={22} color={color} />
+					name={focused ? "reader" : "reader-outline"}
+					size={25} color={color} />
+			}}
+		/>
+		<Drawer.Screen
+			name="Some"
+			component={() => <View />}
+			options={{
+				title: "Partidos",
+				drawerIcon: ({ color, focused }) => <Ionicons
+					name={focused ? "football" : "football-outline"}
+					size={25} color={color} />
 			}}
 		/>
 	</Drawer.Navigator>;

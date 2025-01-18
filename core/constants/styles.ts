@@ -19,6 +19,12 @@ export const gs = StyleSheet.create({
 		minHeight: "100%",
 		flexGrow: 1,
 	},
+	scrollSpaced: {
+		overflow: "visible",
+		minHeight: "100%",
+		flexGrow: 1,
+		paddingHorizontal: 12,
+	},
 	overlay: {
 		height: "100%",
 		width: "100%",

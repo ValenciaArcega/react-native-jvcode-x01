@@ -22,7 +22,7 @@ import { useAppearance } from '@hooks/useAppearance';
 import { separator } from '@utils/tw-ui';
 
 function CustomDrawer(props: any) {
-	// const { globalUser, setGlobalUser } = useUser();
+	const { setUser } = useUser();
 	const { isDarkMode } = useAppearance();
 	const [isLoading, setIsLoading] = useState(true);
 	const [isSigningOut, setIsSigningOut] = useState<boolean>(false);
@@ -64,7 +64,7 @@ function CustomDrawer(props: any) {
 
 			</CustomLinearGradient> */}
 			<View
-				className='p-5 pb-0 -mt-14'>
+				className='p-5 pb-0 -mt-12'>
 				{/* <Image
 					source={globalUser.FOTO_PERFIL ? { uri: globalUser.FOTO_PERFIL } : require("@/assets/img/user-generic.png")}
 					className='h-20 w-20 rounded-full mb-2'
@@ -92,7 +92,7 @@ function CustomDrawer(props: any) {
 			<View className='p-8 pt-5 border-t-[1px] border-[#eee] dark:border-[#4a4545] bg-white dark:bg-[#131313]'>
 				<TouchableOpacity
 					disabled={isSigningOut}
-				//onPress={signUserOut_onPress}
+					onPress={() => setUser(null)}
 				>
 					<View className='flex-row items-center'>
 						{isSigningOut

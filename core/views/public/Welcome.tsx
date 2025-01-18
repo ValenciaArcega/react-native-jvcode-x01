@@ -63,7 +63,7 @@ export const Welcome = function () {
 				color={colorAsset}
 				className="ml-1 mt-5"
 			/>
-			<Text className={txtTitle + " my-3 text-3xl"}>
+			<Text className={txtTitle + " my-3 text-2xl"}>
 				Selecciona tu equipo
 			</Text>
 

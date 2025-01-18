@@ -1,6 +1,7 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createStaticNavigation } from "@react-navigation/native";
 import { DrawerUser } from "./DrawerUser";
+import { Notifications } from "../views/Notifications";
 
 const RouterStackUser = createNativeStackNavigator({
 	screenOptions: {
@@ -8,6 +9,14 @@ const RouterStackUser = createNativeStackNavigator({
 	},
 	screens: {
 		Drawer: DrawerUser,
+		Notifications: {
+			screen: Notifications,
+			options: {
+				headerShown: true,
+				headerBackTitle: "Regresar",
+				headerTitle: "Notificaciones"
+			}
+		},
 	},
 	id: undefined,
 });

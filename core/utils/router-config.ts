@@ -1,14 +1,15 @@
 export const navigatorDrawer = (isDarkMode: boolean) => ({
-	drawerActiveBackgroundColor: isDarkMode ? "#323b5d" : "#dbe4ff",
-	drawerActiveTintColor: isDarkMode ? "#fff" : "#748ffc",
+	drawerActiveBackgroundColor: isDarkMode ? "#123206" : "#B1FF93",
+	drawerActiveTintColor: isDarkMode ? "#E5FFDB" : "#144500",
 	drawerInactiveTintColor: isDarkMode ? "#c5c5c5" : "#343536",
 	drawerItemStyle: {
-		marginTop: 18,
-		borderRadius: 14,
-		paddingLeft: 6,
+		marginTop: 16,
+		borderRadius: 18,
+		paddingLeft: 0,
 	},
 	drawerLabelStyle: {
-		marginLeft: 6
+		marginLeft: 0,
+		fontSize: 16,
 	},
 	// header onto screens
 	headerStyle: {

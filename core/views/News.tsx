@@ -3,13 +3,26 @@ import { wrView } from "@utils/tw-ui";
 import { Octicons } from "@expo/vector-icons";
 import { useAppearance } from "@hooks/useAppearance";
 import { gs } from "../constants/styles";
+import { useFlow } from "../hooks/useFlow";
+import { useLayoutEffect } from "react";
 
 export const News = function () {
 	const { colorAsset } = useAppearance();
+	const { flow } = useFlow();
+
+	useLayoutEffect(function () {
+		flow.setOptions({
+			headerRight: () => <TouchableOpacity
+				onPress={() => flow.navigate("Notifications")}
+			>
+				<Octicons name="bell" size={24} color={colorAsset} className="mr-4 rotate-6" />
+			</TouchableOpacity>,
+		});
+	}, [flow, colorAsset]);
 
 	return <View className={wrView}>
 		<FlatList
-			data={[{}, {}]}
+			data={[{}]}
 			contentInsetAdjustmentBehavior="automatic"
 			style={[gs.scroll, s.scrollAdjustment]}
 			ListEmptyComponent={<View className="flex-grow min-h-[90%] items-center justify-center px-8">
@@ -19,6 +32,7 @@ export const News = function () {
 				</Text>
 			</View>}
 			renderItem={({ item }) => <TouchableOpacity
+				onPress={() => flow.navigate("Notifications")}
 				className="h-44 w-full mt-5 py-4 px-3 rounded-3xl bg-gray-50 border-[1px] border-gray-200 dark:bg-gray900 dark:border-gray-600 flex-row"
 			>
 				<Image
