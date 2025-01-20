@@ -23,8 +23,6 @@ export const Login = function ({ route }: LoginProps) {
 
 	const login_onPress = async function (): Promise<void> {
 		try {
-			console.log(ENDPOINT_LOGIN);
-
 			if (!email || !email.trim()) {
 				Alert.alert(ERR_TITLE, "Asegúrate de ingresar tu correo electrónico para poder continuar.");
 				return;
