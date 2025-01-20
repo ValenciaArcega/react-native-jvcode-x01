@@ -19,5 +19,6 @@ export type Test2Props = {
 import type { StaticScreenProps } from '@react-navigation/native';
 
 export type LoginProps = StaticScreenProps<{
-	guid: string;
+	teamID: string;
+	teamName: string;
 }>;

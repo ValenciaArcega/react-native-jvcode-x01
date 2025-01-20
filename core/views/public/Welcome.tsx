@@ -14,12 +14,22 @@ export const Welcome = function () {
 	const { colorAssetInverted, colorAsset } = useAppearance();
 	const { flow } = useFlow();
 	const [teams, setTeams] = useState<ITeam[]>([]);
-	const [team, setTeam] = useState<number | null>(null);
+	const [teamID, setTeamID] = useState<string>("");
+	const [teamNameSelected, setTeamNameSelected] = useState<string>("");
 	const [isLoading, setIsLoading] = useState<boolean>(true);
 
 	useEffect(() => {
 		getTeams();
 	}, []);
+
+	useEffect(() => {
+		if (!teamID) return;
+
+		const teamSelected = teams.filter(i => {
+			return i.id == teamID;
+		});
+		setTeamNameSelected(teamSelected[0].name);
+	}, [teamID]);
 
 	const getTeams = async function (): Promise<void> {
 		try {
@@ -41,12 +51,13 @@ export const Welcome = function () {
 	};
 
 	const saveTeam_onPress = async function (): Promise<void> {
-		if (!team) {
+		if (!teamID) {
 			Alert.alert(ERR_TITLE, "Asegúrate de seleccionar el equipo al que perteneces para poder continuar.");
 			return;
 		}
 		flow.navigate("Login", {
-			guid: team
+			teamID: teamID,
+			teamName: teamNameSelected,
 		});
 	};
 
@@ -80,8 +91,8 @@ export const Welcome = function () {
 					<Combobox
 						iconName="color-filter-outline"
 						data={teams}
-						value={team}
-						setValue={setTeam}
+						value={teamID}
+						setValue={setTeamID}
 						labelField="name"
 						valueField="id"
 						placeholder="Lista de equipos"

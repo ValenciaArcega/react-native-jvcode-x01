@@ -43,7 +43,7 @@ export const Login = function ({ route }: LoginProps) {
 				method: "POST",
 				headers: {
 					'Content-Type': 'application/json',
-					"DEX-KEY-ENV": props.guid,
+					"DEX-KEY-ENV": props.teamID,
 					"DEX-CHANNEL": "AppMovil"
 				},
 				body: JSON.stringify({
@@ -57,7 +57,10 @@ export const Login = function ({ route }: LoginProps) {
 			const json = await request.json();
 
 			if (json.success) {
-				setUser(json.listElementsDex[0].guid);
+				setUser({
+					GUID: json.listElementsDex[0].guid,
+					GUID_TEAM: props.teamID
+				});
 			}
 			else if (json.message) Alert.alert(ERR_TITLE, json.message);
 		} catch {
@@ -88,12 +91,12 @@ export const Login = function ({ route }: LoginProps) {
 			<Text className={txtTitle}>
 				Inicia Sesión
 			</Text>
-			<Text className="text-gray-400 mt-1 text-sm">
+			<Text className="text-gray-400 mt-1 text-sm mb-4">
 				Ingresa tus credenciales en WIP para poder realizar movimientos y ver el contenido.
 			</Text>
 
-			<Text className={labelInp + " mt-14"}>
-				Usuario
+			<Text className={labelInp}>
+				Usuario en {props.teamName}
 			</Text>
 			<View className={wrInpIcon}>
 				<TextInput
@@ -143,13 +146,13 @@ export const Login = function ({ route }: LoginProps) {
 			<TouchableOpacity
 				disabled={isValidating}
 				onPress={login_onPress}
-				className={btnBase + " mt-12 self-center w-[66%]"}>
+				className={btnBase + " mt-[48px] self-center w-[66%]"}>
 				{isValidating
 					? <ActivityIndicator size="small" color={colorAssetInverted} />
 					: <Fragment>
 						<Ionicons name="log-in-outline" size={22} color={colorAssetInverted} />
 						<Text className={txtBtnBase}>
-							Entrar
+							Entrar con {props.teamName}
 						</Text>
 					</Fragment>}
 			</TouchableOpacity>

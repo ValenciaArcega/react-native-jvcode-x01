@@ -8,6 +8,7 @@ export interface IUser {
 	// PRIMER_AP: string;
 	// SEGUNDO_AP: string;
 	GUID: string;
+	GUID_TEAM: string;
 }
 
 export interface IUserContext {

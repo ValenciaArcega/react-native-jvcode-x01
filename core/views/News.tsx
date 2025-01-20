@@ -5,10 +5,12 @@ import { useAppearance } from "@hooks/useAppearance";
 import { gs } from "../constants/styles";
 import { useFlow } from "../hooks/useFlow";
 import { useLayoutEffect } from "react";
+import { useUser } from "../hooks/useUser";
 
 export const News = function () {
 	const { colorAsset } = useAppearance();
 	const { flow } = useFlow();
+	const { user } = useUser();
 
 	useLayoutEffect(function () {
 		flow.setOptions({
